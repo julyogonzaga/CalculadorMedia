@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Cálculo de Média Corporativa</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo-area">
+        <div class="logo-icon">📊</div>
+        <div>
+          <h1>MetricsEngine</h1>
+          <p>Módulo de Cálculo de Média e Desempenho</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="calculator-card">
+      <form id="mediaForm" onsubmit="event.preventDefault(); calculate();">
+        <div class="form-group">
+          <label for="grade1">Avaliação / Nota 1 (Peso 1)</label>
+          <input type="number" id="grade1" min="0" max="10" step="0.1" placeholder="Ex: 8.5" required>
+        </div>
+
+        <div class="form-group">
+          <label for="grade2">Avaliação / Nota 2 (Peso 1)</label>
+          <input type="number" id="grade2" min="0" max="10" step="0.1" placeholder="Ex: 7.0" required>
+        </div>
+
+        <div class="form-group">
+          <label for="grade3">Avaliação / Nota 3 (Peso 1)</label>
+          <input type="number" id="grade3" min="0" max="10" step="0.1" placeholder="Ex: 9.0" required>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Calcular Média</button>
+          <button type="button" class="btn btn-secondary" onclick="resetForm()">Limpar Dados</button>
+        </div>
+      </form>
+
+      <div id="resultCard" class="result-card hidden">
+        <div class="result-header">
+          <span>Média Final Alcançada</span>
+          <span id="statusBadge" class="badge">--</span>
+        </div>
+        <div id="finalScore" class="score-display">0.00</div>
+        <p id="resultMessage" class="result-message"></p>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <p>© 2026 Enterprise Metrics System — Todos os direitos reservados.</p>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
